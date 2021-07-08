@@ -1,7 +1,7 @@
 var arr = new Array("green", "red", "yellow", "blue");
 var seq = new Array();
 var userSeq = new Array();
-var level = 1;
+var level = 0;
 var started = false;
 function nextSequence(){
   level++;
@@ -11,6 +11,7 @@ function nextSequence(){
   var audio = new Audio("sounds/"+arr[randomNum]+".mp3");
   audio.play();;
   seq.push(arr[randomNum]);
+  $("#level-title").text("round "+level);
 }
 function playing(color,dist){
 $(color).click(()=>{
@@ -35,16 +36,16 @@ if(!started){
   })
 }
 
+if(started) {
 
+  $(".btn").click(function(){
+    var userChosenColour = $(this).attr("id");
+    userSeq.push(userChosenColour);
 
-$(".btn").click(function(){
-  var userChosenColour = $(this).attr("id");
-  userSeq.push(userChosenColour);
-
-  playing(userChosenColour);
-  checkAnswer(userSeq.length-1);
-});
-
+    playing(userChosenColour);
+    checkAnswer(userSeq.length-1);
+  });
+} 
 function checkAnswer(currentLevel) {
 
     if (seq[currentLevel] === userSeq[currentLevel]) {
@@ -63,7 +64,7 @@ function checkAnswer(currentLevel) {
      setTimeout(function () {
        $("body").removeClass("game-over");
      }, 200);
-     level = 1;
+     level = 0;
      seq = [];
      started=false;
   }
