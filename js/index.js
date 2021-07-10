@@ -36,7 +36,7 @@ if(!started){
   })
 }
 
-if(started) {
+
 
   $(".btn").click(function(){
     var userChosenColour = $(this).attr("id");
@@ -45,7 +45,6 @@ if(started) {
     playing(userChosenColour);
     checkAnswer(userSeq.length-1);
   });
-} 
 function checkAnswer(currentLevel) {
 
     if (seq[currentLevel] === userSeq[currentLevel]) {
