@@ -36,7 +36,7 @@ playing("#yellow", "sounds/yellow.mp3");
           }, 1000);
       }
   });
-  $("body").on('touchstart',function(){
+  $("body").tap(()=>{
     if(!started){
       $("h1").text("round "+level);
       started = true;
