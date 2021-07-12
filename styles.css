@@ -25,7 +25,18 @@ body {
   border: 10px solid black;
   border-radius: 20%;
 }
-
+.start {
+  background-color: aqua;
+  margin: 10px;
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+.invisible {
+  display: none;
+}
 .game-over {
   background-color: red;
   opacity: 0.8;
