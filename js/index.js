@@ -36,15 +36,14 @@ playing("#yellow", "sounds/yellow.mp3");
           }, 1000);
       }
   });
-  $("body").on({'touchstart',function(){
+  $("body").on('touchstart',function(){
     if(!started){
       $("h1").text("round "+level);
       started = true;
       setTimeout(function () {
             nextSequence();
           }, 1000);
-      }
-  });
+      });
 
 
 $(".btn").click(function(){
