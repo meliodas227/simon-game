@@ -36,15 +36,18 @@ playing("#yellow", "sounds/yellow.mp3");
           }, 1000);
       }
   });
-  $("body").click(()=>{
+
+  $("#start").click(()=>{
     if(!started){
       $("h1").text("round "+level);
       started = true;
       setTimeout(function () {
             nextSequence();
           }, 1000);
+      $("#start").addClass("invisible");
       }
-  });
+    });
+
 
 
 $(".btn").click(function(){
@@ -76,5 +79,6 @@ function checkAnswer(currentLevel) {
      level = 0;
      seq = [];
      started=false;
+     $("#start").removeClass("invisible");
   }
 }
