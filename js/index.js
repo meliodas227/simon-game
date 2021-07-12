@@ -43,7 +43,8 @@ playing("#yellow", "sounds/yellow.mp3");
       setTimeout(function () {
             nextSequence();
           }, 1000);
-      });
+      }
+  });
 
 
 $(".btn").click(function(){
