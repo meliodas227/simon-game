@@ -72,6 +72,7 @@ function checkAnswer(currentLevel) {
      aud.play();
      $("body").addClass("game-over");
      $("#level-title").text("Game Over, Press Any Key to Restart");
+     alert("you reached round "+level);
 
      setTimeout(function () {
        $("body").removeClass("game-over");
